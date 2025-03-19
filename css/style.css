@@ -28,7 +28,7 @@ img {
   border: 2px dashed red;
 }
 .container {
-  max-width: 1100px;
+  max-width: 1150px;
   margin: 0 auto;
   padding: 0 10px;
 }
@@ -51,11 +51,109 @@ img {
 #spotify-home {
   width: calc(100% - var(--spotify-menu));
 }
-
+/*spotify-menu*/
 .spotify-menu {
   width: var(--spotify-menu);
   background-color: black;
 }
-.spotify-menu .big-logo {
-  width: calc(var(--spotify-menu) - 20px);
+.container-menu {
+  max-width: 50px;
+  margin: 0 auto;
+}
+
+.spotify-menu .spotify-logo {
+  padding: 15px 0;
+  text-align: center;
+}
+.small-logo {
+  width: 35px;
+}
+.big-logo {
+  display: none;
+}
+.list-logo {
+  text-align: center;
+}
+
+.list-menu li {
+  padding-bottom: 10px;
+}
+.list-menu img {
+  width: 30px;
+  color: #808080;
+}
+
+.list-menu span {
+  display: none;
+}
+/* PLAYLIST*/
+#playlist {
+  color: #808080;
+  display: none;
+}
+.fa-plus {
+  background-color: #808080;
+  color: white;
+}
+
+/*DOWNLOAD SONG*/
+.download-song {
+  text-align: center;
+}
+.download-song img {
+  width: 20px;
+}
+.download-song span {
+  display: none;
+}
+.spotify-menu hr {
+  border: 1px solid #808080;
+  display: none;
+}
+.users {
+  text-align: center;
+}
+
+.users img {
+  width: 30px;
+  background-color: #808080;
+  border-radius: 50%;
+}
+@media screen and (min-width: 640px) {
+  .spotify-menu {
+    width: 300px;
+  }
+  .container-menu {
+    max-width: 175px;
+  }
+  .spotify-menu .spotify-logo {
+    padding: 15px 0;
+    text-align: start;
+  }
+  .small-logo {
+    display: none;
+  }
+  .big-logo {
+    display: block;
+    width: 8rem;
+  }
+  .list-logo {
+    text-align: start;
+  }
+  .list-menu span {
+    display: inline;
+    color: #808080;
+    vertical-align: middle;
+    padding-left: 10px;
+  }
+  .list-menu img {
+    vertical-align: middle;
+  }
+
+  #playlist {
+    display: block;
+  }
+  #playlist h3 {
+    color: white;
+  }
 }
