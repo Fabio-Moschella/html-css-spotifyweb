@@ -3,6 +3,10 @@
   margin: 0;
   padding: 0;
 }
+:root {
+  --spotify-player: 90px;
+  --spotify-menu: 60px;
+}
 
 /*UTILITY*/
 ul {
@@ -29,36 +33,29 @@ img {
   padding: 0 10px;
 }
 .wrapper {
-  display: flex;
-  flex-direction: column;
   width: 100vw;
   height: 100vh;
-}
-body {
+  overflow: hidden;
   background-color: #141922;
 }
-.spotify-content {
-  height: 100vh;
+
+#spotify-content {
+  height: calc(100vh - var(--spotify-player));
+
   display: flex;
-  flex-wrap: wrap;
 }
-.spotify-player {
-  height: 100px;
+#spotify-player {
+  height: var(--spotify-player);
   background-color: #282828;
 }
-.spotify-home {
-  width: 90%;
-}
-.upgrade-spotify {
-  background-color: #080b12;
-  height: 100px;
-  text-align: end;
+#spotify-home {
+  width: calc(100% - var(--spotify-menu));
 }
 
 .spotify-menu {
-  width: 10%;
+  width: var(--spotify-menu);
   background-color: black;
 }
-
-.big-logo {
+.spotify-menu .big-logo {
+  width: calc(var(--spotify-menu) - 20px);
 }
