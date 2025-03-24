@@ -38,6 +38,20 @@ img {
   overflow: hidden;
   background-color: #141922;
 }
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+[class*="col"] {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.col-1-6 {
+  width: calc(100% / 6);
+}
 
 /*SPOTIFY-CONTENT*/
 #spotify-content {
@@ -103,18 +117,27 @@ img {
   gap: 1rem;
   margin-bottom: 10px;
 }
-.button-playlist {
-  width: 30px;
-  height: 30px;
-  background-color: #808080;
-}
 
 #playlist h3 {
   color: white;
   font-size: medium;
   margin: 20px 0;
 }
-
+#playlist .button-playlist {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#playlist .fa-plus {
+  color: #080b12;
+  width: 30px;
+  height: 30px;
+  background-color: #808080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
 /*DOWNLOAD SONG*/
 .download-song {
   text-align: center;
@@ -155,6 +178,7 @@ img {
   background-color: #282828;
   display: flex;
   justify-content: space-between;
+  position: sticky;
 }
 #spotify-player .song {
   display: flex;
@@ -230,17 +254,26 @@ img {
 }
 
 .bar {
-  border: 1px solid grey;
+  border: 2px solid grey;
   background-color: grey;
+  border-radius: 999px;
 }
 .min-bar {
   width: 30%;
-  border: 1px solid lightgrey;
+  border: 2px solid lightgrey;
+  border-radius: 999px;
 }
 /*SPOTIFY-HOME*/
+
 #spotify-home {
   width: calc(100vw - var(--spotify-menu));
 }
+.container-home {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0;
+}
+/*HEADER-SPOTIFY-HOME*/
 #spotify-home .upgrade-spotify {
   width: 100%;
   height: 100px;
@@ -271,6 +304,7 @@ img {
   width: 30%;
   margin: 0 auto;
 }
+/*MAIN-SPOTIFY-HOME*/
 .main-spotify-home {
   margin-left: 10px;
   margin-right: 10px;
@@ -279,8 +313,134 @@ img {
   color: white;
   padding: 20px 0;
   font-weight: 900;
+  font-size: 1.5rem;
 }
 
+.songs-recently ul {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 0.5rem;
+  overflow: auto;
+}
+.songs-recently li {
+  max-width: 200px;
+  align-items: center;
+}
+.songs-recently .title-song {
+  text-align: center;
+  color: white;
+  font-size: 0.7rem;
+}
+.songs-recently .title-song p {
+  padding-top: 10px;
+}
+.metallari-theme .fa-circle-play {
+  display: none;
+  color: white;
+  position: absolute;
+  left: 80px;
+  top: 93px;
+}
+.stranger-things-theme .fa-circle-play {
+  display: none;
+  color: white;
+  position: absolute;
+  left: 270px;
+  top: 93px;
+}
+.quiet-place-theme .fa-circle-play {
+  display: none;
+  color: white;
+  position: absolute;
+  left: 465px;
+  top: 93px;
+}
+.Split-theme .fa-circle-play {
+  display: none;
+  color: white;
+  position: absolute;
+  right: 485px;
+  top: 93px;
+}
+.cure-theme .fa-circle-play {
+  display: none;
+  color: white;
+  position: absolute;
+  right: 278px;
+  top: 93px;
+}
+.sinister-theme .fa-circle-play {
+  display: none;
+  color: white;
+  position: absolute;
+  right: 80px;
+  top: 93px;
+}
+
+.list-songs {
+  position: relative;
+}
+/*DAILYMIX-USER*/
+#dailymix-user {
+  margin-top: 30px;
+}
+.realese-radar-img,
+.daily-mix {
+  max-width: 200px;
+  display: inline-block;
+  text-align: center;
+  color: white;
+}
+.title-dailymix-user h1 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+.title-dailymix-user p {
+  color: #808080;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+#dailymix-user h3 {
+  padding: 10px 0;
+}
+.realese-radar-img {
+  margin-right: 20px;
+}
+/*ARTISTI-POPOLARI*/
+.lanadelrey-img,
+.einaudi-artist {
+  max-width: 200px;
+  display: inline-block;
+  text-align: center;
+  color: white;
+}
+#most-popular-artist {
+  margin-top: 30px;
+}
+.title-popular-artist h1 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+.title-popular-artist p {
+  color: #808080;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+#most-popular-artist h3 {
+  padding: 10px 0;
+}
+.lanadelrey-img {
+  margin-right: 20px;
+}
+.lanadelrey-img img {
+  border-radius: 50%;
+}
+.einaudi-artist img {
+  border-radius: 50%;
+}
 @media screen and (min-width: 640px) {
   .spotify-menu {
     width: 300px;
@@ -335,11 +495,111 @@ img {
   .users span {
     display: inline-block;
   }
+  .songs-recently li {
+    max-width: 193px;
+  }
+  .realese-radar-img,
+  .daily-mix {
+    max-width: 193px;
+  }
+  .lanadelrey-img,
+  .einaudi-artist {
+    max-width: 193px;
+  }
 }
 @media screen and (min-width: 878px) {
   .name-song p {
     display: inline-block;
   }
+  .songs-recently li {
+    max-width: 149px;
+  }
+  .realese-radar-img,
+  .daily-mix {
+    max-width: 149px;
+  }
+  .lanadelrey-img,
+  .einaudi-artist {
+    max-width: 149px;
+  }
 }
 @media screen and (min-width: 1440px) {
+  .songs-recently li {
+    max-width: 187px;
+  }
+  .realese-radar-img,
+  .daily-mix {
+    max-width: 187px;
+  }
+  .lanadelrey-img,
+  .einaudi-artist {
+    max-width: 149px;
+  }
+  /*HOVER-SPOTIFY*/
+  .metallari-theme:hover .fa-circle-play {
+    display: block;
+  }
+  .stranger-things-theme:hover .fa-circle-play {
+    display: block;
+  }
+  .quiet-place-theme:hover .fa-circle-play {
+    display: block;
+  }
+  .Split-theme:hover .fa-circle-play {
+    display: block;
+  }
+  .cure-theme:hover .fa-circle-play {
+    display: block;
+  }
+  .sinister-theme:hover .fa-circle-play {
+    display: block;
+  }
+  .item-pages-1:hover,
+  .item-pages-2:hover,
+  .item-pages-3:hover,
+  .item-pages-4:hover,
+  .item-pages-5:hover,
+  .item-pages-6:hover div {
+    color: white;
+  }
+  .upgrade:hover {
+    padding: 15px;
+  }
+  /*HOVER-MENU-SPOTIFY*/
+  .list-menu span:hover {
+    color: white;
+  }
+
+  .list-playlist li:hover {
+    color: white;
+  }
+  .button-playlist span:hover {
+    color: white;
+  }
+  .button-playlist:hover .fa-plus {
+    background-color: rgb(184, 21, 21);
+  }
+  .download-song:hover {
+    color: white;
+  }
+  /*HOVER-SPOTIFY-PLAYER*/
+  .name-song:hover p {
+    color: white;
+    text-decoration: underline;
+  }
+  .icon-theme .fa-heart:hover {
+    color: white;
+  }
+  .icon-theme .fa-folder:hover {
+    color: white;
+  }
+  .icon-player .fa-circle-play:hover {
+    font-size: 2.2rem;
+  }
+  .playback-bar:hover .min-bar {
+    border: 2px solid lawngreen;
+  }
+  .volume-high:hover .volume-small {
+    border: 2px solid lawngreen;
+  }
 }
