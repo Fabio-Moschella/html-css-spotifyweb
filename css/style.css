@@ -128,7 +128,7 @@ img {
   align-items: center;
   justify-content: center;
 }
-#playlist .fa-plus {
+.button-playlist .fa-plus {
   color: #080b12;
   width: 30px;
   height: 30px;
@@ -225,6 +225,7 @@ img {
   border-radius: 999px;
 }
 .volume-ball {
+  display: none;
   background-color: white;
   border-radius: 50%;
   height: 10px;
@@ -587,11 +588,12 @@ img {
   .list-playlist li:hover {
     color: white;
   }
-  .button-playlist span:hover {
+
+  .button-playlist:hover {
     color: white;
   }
   .button-playlist:hover .fa-plus {
-    background-color: rgb(184, 21, 21);
+    background-color: white;
   }
   .download-song:hover {
     color: white;
@@ -615,5 +617,11 @@ img {
   }
   .volume-high:hover .volume-small {
     border: 2px solid lawngreen;
+  }
+  .volume-high:hover .volume-ball {
+    display: block;
+  }
+  .playback-bar:hover .volume-ball {
+    display: block;
   }
 }
